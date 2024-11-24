@@ -1,0 +1,649 @@
+/* Importa a fonte "Titillium Web" do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300&display=swap');
+
+/* Reset padrão para remover margens e paddings iniciais de todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: 'Titillium Web', sans-serif; 
+}
+
+/* Habilita uma rolagem suave ao navegar por âncoras */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Estilização genérica para containers principais */
+.container {
+    max-width: 1080px; 
+    margin: 0 auto; 
+    display: flex; 
+    align-items: center; 
+}
+
+/* Container secundário usado em outras seções */
+.container1 { 
+    max-width: 1080px; 
+    margin: 0 auto; 
+}
+
+/* Estilização do cabeçalho */
+header {
+    background-color: rgb(89, 158, 89); 
+    width: 100%; 
+    padding: 10px 4%;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    justify-content: flex-start; 
+    margin-bottom: 30px; 
+}
+
+/* Estilização da área de logo */
+.logo {
+    width: 30%; 
+    right: 300px; 
+}
+
+/* Ajusta a imagem da logo */
+.logo img {
+    width: 100px; 
+    cursor: pointer; 
+}
+
+/* Estilização do menu de navegação */
+.menu {
+    width: 50%; 
+}
+
+/* Slider de imagens */
+section.slider {
+    margin: 0 auto; 
+    width: 100%; 
+    height: auto; 
+    padding: 0; 
+    overflow: hidden; 
+}
+
+/* Conteúdo do slider */
+.slider-content {
+    width: 400%; 
+    height: auto; 
+    display: flex; 
+}
+
+/* Oculta os inputs e imagens destinadas ao mobile em telas maiores */
+.slider-content input, .img-mobile {
+    display: none;
+}
+
+/* Cada imagem do slider */
+.slide-box {
+    width: 25%; 
+    height: auto; 
+    position: relative; 
+    text-align: center; 
+    transition: 1s; 
+}
+
+/* Estilização das imagens dentro de cada slide */
+.slide-box img {
+    width: 100%; 
+}
+
+/* Navegação automática e manual do slider */
+.nav-manual, .nav-auto {
+    position: absolute; 
+    width: 1080px; 
+    margin-top: 700px; 
+    display: flex; 
+    justify-content: center; 
+}
+
+/* Botões de navegação manual e automática */
+.nav-manual .manual-btn, .nav-auto div {
+    border: 1px solid #25d366; 
+    padding: 10px; 
+    border-radius: 50%; 
+    cursor: pointer; 
+    transition: 0.23s; 
+}
+
+/* Espaçamento entre os botões, exceto o último */
+.nav-manual .manual-btn:not(:last-child), .nav-auto div:not(:last-child) {
+    margin-right: 10px;
+}
+
+/* Estilização ao passar o mouse sobre os botões manuais */
+.nav-manual .manual-btn:hover {
+    background-color: #25d366; 
+}
+
+/* Estilização de botões ativos dependendo do slide atual */
+#radio1:checked ~ .nav-auto .auto-btn1 {
+    background-color: #25d366; 
+}
+
+#radio2:checked ~ .nav-auto .auto-btn2 {
+    background-color: #25d366; 
+}
+
+#radio3:checked ~ .nav-auto .auto-btn3 {
+    background-color: #25d366; 
+}
+
+/* Controle de movimento dos slides dependendo do botão ativo */
+#radio1:checked ~ .primeiro {
+    margin-left: 0%;
+}
+
+#radio2:checked ~ .primeiro {
+    margin-left: -25%; 
+}
+
+#radio3:checked ~ .primeiro {
+    margin-left: -50%; 
+}
+
+/* Estilizações para telas menores (responsivo) */
+@media screen and (max-width: 900px) {
+    .img-desktop {
+        display: none; 
+    }
+
+    .img-mobile {
+        display: block; 
+    }
+
+}
+
+/* Estiliza o container que envolve os cards */
+.container__card {
+    max-width: 1200px; 
+    margin: auto; 
+    margin-top: 100px; 
+    perspective: 1000px; 
+    display: flex; 
+    justify-content: center; 
+    flex-wrap: wrap; 
+}
+
+/* Estiliza cada card individualmente (pai) */
+.card__father {
+    margin: 20px; 
+    perspective: 1000px; 
+}
+
+/* Ao passar o mouse sobre o card pai, o card gira em 180 graus */
+.card__father:hover .card {
+    transform: rotateY(180deg); 
+}
+
+/* Estiliza o card, definindo a largura e altura, e efeitos de transição */
+.card {
+    width: 350px; 
+    height: 400px; 
+    position: relative; 
+    transform-style: preserve-3d; 
+    transition: all 600ms; 
+}
+
+/* Estiliza a frente do card, aplicando fundo e controle de imagem */
+.card__front {
+    background-size: cover; 
+    background-position: center; 
+}
+
+/* Ambos os lados do card, frente e verso, têm o mesmo estilo de largura e altura */
+.card__front, .card__back {
+    width: 100%; 
+    height: 100%; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    backface-visibility: hidden; 
+    transform-style: preserve-3d; 
+    border-radius: 20px; 
+}
+
+/* Estiliza o verso do card, incluindo rotação de 180 graus */
+.card__back {
+    transform: rotateY(180deg); 
+    background: white; 
+    background-size: cover; 
+    background-position: center; 
+}
+
+/* Corpo da frente do card, com alinhamento de conteúdo */
+.body__card_front {
+    width: 100%; 
+    height: 100%;
+    text-align: center; 
+    padding: 40px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    color: #fff; 
+    transform: translateZ(60px); 
+}
+
+/* A sombra do fundo do card, visível em ambas as faces */
+.bg {
+    width: 100%; 
+    height: 100%; 
+    position: absolute; 
+    top: 0;
+    left: 0; 
+    background: rgba(0, 0, 0, 0.4); 
+    border-radius: 20px; 
+}
+
+/* Corpo do verso do card, com alinhamento e padding */
+.body__card_back {
+    padding: 40px; 
+    text-align: center; 
+    transform: translateZ(60px); 
+}
+
+/* Estiliza o parágrafo dentro do verso do card */
+.body__card_back p {
+    margin-top: 30px; 
+    font-size: 18px; 
+}
+
+/* Estiliza o botão dentro do verso do card */
+.body__card_back input {
+    padding: 10px 40px; 
+    margin-top: 300px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    border: none; 
+    color: white; 
+    background: #58B0F6; 
+    box-shadow: 1px 1px 30px -5px #58B0F6; 
+    border-radius: 10px; 
+    transition: box-shadow 600ms; 
+}
+
+/* Efeito de hover no botão (quando o mouse passa sobre o botão) */
+.body__card_back input:hover {
+    box-shadow: 1px 1px 30px 0px #449de6; 
+}
+
+/* Estiliza os links do menu */
+.menu nav a {
+    color: #c4c4c4; 
+    text-decoration: none; 
+    font-size: 18px; 
+    padding-right: 35px; 
+    padding-bottom: 8px; 
+    position: relative;
+}
+
+/* Cria a linha de animação sob o link, inicializando com largura 0 */
+.menu nav a::after {
+    content: " ";
+    width: 0px; 
+    height: 4px; 
+    background-image: linear-gradient(45deg ,rgb(89, 158, 89), #4dca2d); 
+    position: absolute;
+    bottom: 0;
+    left: 0; 
+    transition: width 0.5s; 
+}
+
+/* Quando o link é hoverado, a linha se expande */
+.menu nav a:hover::after {
+    width: 30px; 
+}
+
+/* Efeito de hover no link (quando o mouse passa sobre o link) */
+.menu nav a:hover {
+    color: #ffffff; 
+}
+
+/* Estiliza o link do WhatsApp fixo na tela */
+.whatsapp-link {
+    position: fixed; 
+    width: 60px; 
+    height: 60px; 
+    bottom: 40px; 
+    right: 40px; 
+    background-color: #25d366; 
+    color: #fff; 
+    border-radius: 50px; 
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 1px 1px 2px #888; 
+    z-index: 1000; 
+    cursor: pointer; 
+    transition: transform 0.5s;
+}
+
+/* Estiliza o ícone do WhatsApp */
+.fa-whatsapp {
+    margin-top: 16px;
+}
+
+/* Estiliza o link fixo para o Instagram na tela */
+.instagram-link {
+    position: fixed; 
+    width: 60px; 
+    height: 60px; 
+    bottom: 40px; 
+    right: 120px; 
+    background: linear-gradient( 
+        20deg, #ffdc80 10%, #fcaf45, #f77737, #f56040, #fd1d1d, 
+        #e1306c, #c13584, #833ab4, #5b51d8, #405de6
+    );
+    color: #fff; 
+    border-radius: 50px; 
+    text-align: center; 
+    font-size: 30px; 
+    box-shadow: 1px 1px 2px #888;
+    z-index: 1000; 
+}
+
+/* Estiliza o ícone do Instagram, adicionando espaçamento superior */
+.fa-instagram {
+    margin-top: 16px; 
+}
+
+/* Estiliza seções do conteúdo da página */
+section {
+    padding: 90px 4%; 
+    border-bottom: 1px solid #ccc; 
+}
+
+/* Estiliza o título dentro das seções */
+section h2 {
+    font-size: 2em; 
+    margin-bottom: 25px;
+}
+
+/* Estiliza os parágrafos dentro das seções */
+section p {
+    font-size: 20px;
+}
+
+/* Aplica um espaço no topo das seções ao rolar a página */
+Section {
+    scroll-margin-top: 80px; 
+}
+
+/* Estiliza o menu mobile que aparece ao clicar no ícone de menu */
+#menu-mobile {
+    background-color: #1111119f; 
+    backdrop-filter: blur(10px); 
+    position: absolute;
+    top: 77px;
+    right: 0; 
+    width: 100%; 
+    height: 0;
+    visibility: hidden; 
+    z-index: 1000;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+/* Estiliza os links dentro do menu mobile */
+#menu-mobile nav a {
+    display: block;
+    color: #ffffff;
+    padding: 20px 30px;
+    font-size: 20px;
+    text-decoration: none; 
+}
+
+/* Adiciona efeito de hover nos links do menu mobile */
+#menu-mobile nav a:hover {
+    background-color: #383838;
+}
+
+/* Estiliza os botões de menu (abrir e fechar) */
+#btn-menu,
+#btn-menu-close {
+    color: #ffffff;
+    font-size: 30px; 
+    cursor: pointer; 
+    display: none; 
+}
+/* Formulário */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body .Contato{
+    background: linear-gradient(90deg, #18813e 0%,#18813e 30%, #25d366 30%, #25d366 100%);
+}
+.Contato{
+    position: relative;
+    width: 100%;
+    padding: 40px 100px;
+}
+.Contato .title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+}
+.Contato .title{
+    color: #fff;
+    font-weight: 500;
+}
+
+.form{
+    grid-area: form;
+}
+.info{
+    grid-area: info;
+}
+.map{
+    grid-area: map;
+}
+
+.contact{
+    padding: 40px;
+    background: #fff;
+    box-shadow: 0 5px 35px rgba(0,0,0,0.15);
+}
+
+.box{
+    position: relative;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 5fr 4fr;
+    grid-template-areas: 
+    "form info"
+    "form map";
+    grid-gap: 20px;
+    margin-top: 20px;
+}
+.contact h3{
+    color:#175e21;
+    font-weight: 500;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.form{
+    position: relative;
+    width: 100%;
+}
+.form .row50{
+    display:flex;
+    gap: 20px;
+}
+/* para um formulário ficar alinhado  usar display:fex; e flex-direction:column*/
+.inputBox{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    width: 50%;
+}
+.FormBox .row100 .inputBox{
+   width: 100%;
+}
+.inputBox span{
+    color: #218a27;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+.inputBox input {
+    padding: 10px;
+    font-size: 1em;
+    outline: none;
+    border: 1px solid #333;
+}
+.inputBox textarea{
+    padding: 10px;
+    font-size: 1em;
+    outline: none;
+    border: 1px solid #333;
+    resize: none;
+    min-height: 220px;
+    margin-bottom: 10px;
+}
+.inputBox input[type="submit"]{
+    background:#ff578b;
+    color: #fff;
+    border: none;
+    font-size: 1.1em;
+    max-width: 120px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 14px 15px;
+}
+.input ::placeholder{
+    color: #999;
+}
+
+.info{
+    background: #18813f9d;
+}
+.info h3{
+    color: #ffff;
+}
+.info .infoBox div{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.info .infoBox div span{
+    min-width: 40px;
+    height: 40px;
+    color: #fff;
+    background: #18813e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.info .infoBox div p {
+    color: #fff;
+    font-size: 1.1em;
+}
+.info .infoBox div a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+.sci{
+    margin-top: 40px;
+    display: flex;
+}
+.sci li {
+    list-style: none;
+    margin-left: 15px;
+}
+.sci li a {
+    color: #fff;
+    font-size: 2em;
+    color: #ccc;
+    padding: 15px;
+}
+.sci li a:hover{
+    color: #fff
+}
+.map{
+    padding: 0;
+}
+.map iframe{
+    width: 100%;
+    height: 100%;
+}
+
+/* responsividade */
+@media ( max-width: 991px){
+    body{
+        background: #ffffff;
+    }
+    .Contato{
+        padding: 20px;
+    }
+    .box{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "form"
+        "info"
+        "map";
+    }
+    h2{
+        font-size: 1em;
+        align-items: center;
+    }
+    
+    .FormBox .row50{
+        display: flex;
+        gap: 0;
+        flex-direction: column;
+    }
+    .inputBox{
+        width: 100%;
+    }
+    .contact{
+        padding: 30px;
+    }
+    .map {
+        min-height: 300px;
+        padding: 0;
+    }
+}
+footer{
+    text-align: center;
+}
+
+
+/* Estilos para telas menores que 1110px */
+@media screen and (max-width: 1110px) {
+    /* Esconde os elementos de menu e sociais em telas pequenas */
+    .menu, .social {
+        display: none; 
+    }
+
+    /* Faz com que o logo ocupe 100% da largura disponível */
+    .logo {
+        width: 100%; 
+    }
+
+    /* Exibe os botões de menu e o menu mobile em telas menores */
+    #btn-menu,
+    #menu-mobile {
+        display: block; 
+    }
+
+    /* Quando o menu mobile tem a classe "active", ele ocupa toda a altura da tela */
+    #menu-mobile.active {
+        height: calc(100vh - 77px);
+        visibility: visible;
+    }
+}

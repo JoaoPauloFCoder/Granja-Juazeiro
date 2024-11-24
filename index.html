@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Importação de biblioteca de ícones FontAwesome -->
+    <script src="https://kit.fontawesome.com/6dda5f6271.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Granja Juazeiro</title>
+</head>
+<body>
+    <!-- Cabeçalho do site -->
+    <header>
+        <div class="container">
+            <!-- Logo do site -->
+            <div class="logo">
+                <img src="img/logo-granja.png" alt="Logo do site">
+            </div>
+            <!-- Menu de navegação -->
+            <div class="menu">
+                <nav>
+                    <!-- Links do menu que levam a diferentes seções da página -->
+                    <a href="#home"> Granja Juazeiro </a>
+                    <a href="#local"> Local </a>
+                    <a href="#servicos"> Produtos </a>
+                    <a href="#beneficios"> Beneficios </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Botão flutuante para WhatsApp -->
+    <a class="whatsapp-link" href="https://web.whatsapp.com/send?phone=5581999960031" target="_blank">
+        <i class="fa fa-whatsapp"></i>
+</a>
+
+<!-- Botão flutuante para Instagram -->
+<a class="instagram-link" href="https://www.instagram.com/granjajuazeiro/" target="_blank">
+    <i class="fa fa-instagram"></i>
+</a>
+
+    <!-- Seção "Home" -->
+    <section id="home">
+        <div class="container1">
+            <h2>Um pouco sobre nós</h2>
+            <p>
+                Bem vindos ao site da Granja juazeiro, aqui temos como prioridade mostrar um pouco de nossa empresa, visando mostrar com transparência o que temos a ofertar, sempre tendo em mente entregar o melhor produto possível para nossos clientes, nossa empresa teve sua fundação no ano de 2018, e desde seu nascimento sempre procuramos o melhor para o cliente.
+            </p>
+            <p>
+                E para que possa falar conosco, é só clicar no instagram, ou no whatsapp!
+            </p>
+        </div>
+    </section>
+
+    <!-- Seção "Sobre" -->
+    <section id="local">
+        <div class="container1">
+            <h2> Conheça mais do nosso espaço</h2>
+            <!-- Slider de imagens com navegação -->
+            <section class="slider">
+                <div class="slider-content">
+                    <!-- Inputs para controle do slider -->
+                    <input type="radio" name="btn-radio" id="radio1">
+                    <input type="radio" name="btn-radio" id="radio2">
+                    <input type="radio" name="btn-radio" id="radio3">
+
+                    <!-- Primeira imagem do slider -->
+                    <div class="slide-box primeiro">
+                        <img class="img-desktop" src="img/img-granja1.jfif" alt="Slide 1">
+                        <img class="img-mobile" src="img/img-granja1.jfif" alt="Slide 1 para mobile">
+                    </div>
+
+                    <!-- Segunda imagem do slider -->
+                    <div class="slide-box">
+                        <img class="img-desktop" src="img/img-granja2.jfif" alt="Slide 2">
+                        <img class="img-mobile" src="img/img-granja2.jfif" alt="Slide 2 para mobile">
+                    </div>
+
+                    <div class="slide-box">
+                        <img class="img-desktop" src="img/img-granja3.jfif" alt="Slide 3">
+                        <img class="img-mobile" src="img/img-granja3.jfif" alt="Slide 2 para mobile">
+                    </div>
+
+                    <!-- Navegação manual entre as imagens -->
+                    <div class="nav-manual">
+                        <label for="radio1" class="manual-btn"></label>
+                        <label for="radio2" class="manual-btn"></label>
+                        <label for="radio3" class="manual-btn"></label>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <!-- Seção "Nossa Equipe" -->
+    <section id="servicos">
+        <div class="container1">
+            <h1> Nossos produtos: </h1>
+            <!-- Cartões interativos com imagens e links -->
+            <div class="container__card">
+                <div class="card__father">
+                    <div class="card">
+                        <!-- Frente do cartão -->
+                        <div class="card__front" style="background-image: url(img/img-galinha.jpg);">
+                            <!-- Sombreado do carão para diferenciação de cores -->
+                            <div class="bg"></div>
+                            <div class="body__card_front">
+                            </div>
+                        </div>
+                        <!-- Verso do cartão com link -->
+                        <div class="card__back" style="background-image: url(img/img-ovo.jfif);">
+                            <div class="body__card_back">
+                                    
+                            <a href="https://cookpad.com/br/busca/ovos"><input type="button" value="Utilidades"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>        
+                <!-- Segundo cartão -->
+                <div class="card__father">
+                    <div class="card">
+                        <!-- Frente do cartão -->
+                        <div class="card__front" style="background-image: url(img/img-galinha-marrom.jpg);">
+                            <!-- Sombreado do carão para diferenciação de cores -->
+                            <div class="bg"></div>
+                            <div class="body__card_front">
+                            </div>
+                        </div>
+                        <!-- Verso do cartão com link -->
+                        <div class="card__back" style="background-image: url(img/img-ovo-marrom.webp);">
+                            <div class="body__card_back">
+                                <a href="https://cookpad.com/br/busca/ovos"><input type="button" value="Utilidades"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Seção "Serviços" -->
+    <section id="beneficios">
+        <div class="container1">
+            <h2>Um pouco sobre ovos:</h2>
+            <p>
+                Os ovos são alimentos extremamente nutritivos, versáteis e acessíveis, oferecendo diversos benefícios para a saúde. Primeiramente, são uma fonte de proteínas de alta qualidade, contendo todos os aminoácidos essenciais que o corpo precisa para construir e reparar tecidos. Cada ovo possui cerca de 6 gramas de proteína, sendo ideal para a manutenção muscular e recuperação após exercícios físicos. Além disso, os ovos promovem a saúde do cérebro, já que são ricos em colina, um nutriente essencial para o funcionamento cerebral, memória e formação de neurotransmissores. Durante a gravidez, a colina também desempenha um papel importante no desenvolvimento do cérebro fetal.    
+            </p>
+        </div>
+    </section>
+     <!-- Formulário-->
+    <div class="Contato">
+        <div class="title">
+            <h2>Entrar em contato</h2>
+        </div>
+        <div class="box">
+            <!-- box do formulario -->
+            <div class="contact form">
+                <div class="contact form">
+                    <h3>Envie uma mensagem</h3>
+                    <form>
+                        <div class="FormBox">
+                            <div class="row50">
+                                <div class="inputBox">
+                                    <span>Primeiro nome</span>
+                                    <input type="text" placeholder="Nome">
+                                </div>
+                                <div class="inputBox">
+                                    <span>Ultimo nome</span>
+                                    <input type="text" placeholder="Sobrenome">
+                                </div>
+                            </div>
+                            <div class="row50">
+                                <div class="inputBox">
+                                    <span>E-mail</span>
+                                    <input type="text" placeholder="Priscila@gmail.com">
+                                </div>
+                                <div class="inputBox">
+                                    <span>Celular</span>
+                                    <input type="text" placeholder="+55 11 99999-9999">
+                                </div>
+                            </div>
+
+                            <div class="row100">
+                                <div class="inputBox">
+                                    <span>Mensagem</span>
+                                    <textarea placeholder="Digite sua mensagem aqui"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="row100">
+                                <div class="inputBox">
+                                    <input type="submit" value="Enviar"/>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- box das informações -->
+            <div class="contact info">
+                <h3>Informações de Contato</h3>
+                <div class="infoBox">
+                    <div>
+                        <span><ion-icon name="location"></ion-icon></span>
+                        <p>São Bento do Una - PE</p>
+                    </div>
+                    <div>
+                        <span><ion-icon name="mail"></ion-icon></span>
+                        <a href="mailto:pedrohtc23@gmail.com">jarbascintra@gmail.com</a>
+                    </div>
+                    <div>
+                        <span><ion-icon name="call"></ion-icon></span>
+                        <a href="tel:+558199418534">+55 81 999960031</a>
+                    </div>
+                </div>
+            </div>
+            <!-- box do mapa -->
+            <div class="contact map">
+                <iframe src=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15782.970843248191!2d-36.452306747009274!3d-8.524341713724416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7a9d75bf13650b5%3A0xb296a81584a5093d!2sS%C3%A3o%20Bento%20do%20Una%2C%20PE%2C%2055370-000!5e0!3m2!1spt-BR!2sbr!4v1731986904703!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script src="index.js"></script>
+</body>
+</html>
